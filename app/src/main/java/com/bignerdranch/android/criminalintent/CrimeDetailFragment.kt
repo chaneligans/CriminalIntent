@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.bignerdranch.android.criminalintent.databinding.FragmentCrimeDetailBinding
+import java.text.DateFormat
+import java.util.Calendar
 import java.util.Date
 import java.util.UUID
 
@@ -51,7 +53,8 @@ class CrimeDetailFragment : Fragment() {
 
             // Button to set the date
             crimeDate.apply {
-                text = crime.date.toString()
+                text = DateFormat.getDateInstance().format(crime.date).toString()
+//                text = crime.date.toString()
                 isEnabled = false // makes button not clickable for now
             }
 
