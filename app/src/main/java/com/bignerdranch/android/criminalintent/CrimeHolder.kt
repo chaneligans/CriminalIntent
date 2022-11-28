@@ -1,5 +1,6 @@
 package com.bignerdranch.android.criminalintent
 
+import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bignerdranch.android.criminalintent.databinding.ListItemCrimeBinding
 import com.google.android.material.snackbar.BaseTransientBottomBar
@@ -18,6 +19,12 @@ class CrimeHolder(
                 "${crime.title} clicked~",
                 BaseTransientBottomBar.LENGTH_SHORT
             ).show()
+        }
+
+        binding.crimeSolved.visibility = if (crime.isSolved) {
+            View.VISIBLE
+        } else {
+            View.GONE
         }
     }
 }
